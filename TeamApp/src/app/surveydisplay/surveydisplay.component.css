@@ -1,0 +1,59 @@
+body {
+    background-color: #9accf3
+}
+
+.card {
+    background-color:white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 6px 6px 2px #0f1113
+}
+
+.allergy {
+    position: relative;
+    bottom: 8px;
+    color: grey
+}
+
+.head {
+    color: #97989a;
+    font-size: 12px
+}
+
+.bottom {
+    color: grey;
+    font-size: 14px
+}
+
+/* GReen result */
+body {
+    background-color: rgb(117, 194, 245)
+}
+
+.badge {
+    font-size: 25px;
+    font-weight: 200
+}
+
+.badge i {
+    font-size: 20px;
+    font-weight: 200
+}
+
+.about-rating {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px
+}
+
+.total-ratings {
+    font-size: 12px
+}
+
+.bg-custom {
+    background-color: #b7dd29 !important
+}
+
+.progress {
+    margin-top: 10px
+}

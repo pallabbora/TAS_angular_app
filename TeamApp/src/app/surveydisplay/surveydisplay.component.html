@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7">
+            <div class="card p-2 text-center">
+                <a href="#" class="previous" routerLinkActive="active" routerLink="/employeelist">&laquo; Back</a>
+                <div class="row">
+                    <div class="col-md-7 border-right no-gutters">
+                        <div class="py-3"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" width="100" class="rounded-circle">
+                            <h4 class="text-secondary" name="employeeName">{{resultData.firstName | uppercase}} {{resultData.lastName | uppercase}}</h4>
+                            <div class="stats">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex flex-column"> <span class="text-left head">Email</span> <span class="text-left bottom">{{resultData.email}}</span> </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex flex-column"> <span class="text-left head">Employee Id</span> <span class="text-left bottom">{{resultData.employeeId}}</span> </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="container mt-5">
+                                                <span class="badge bg-success">{{resultData.employeeRating}}/100 
+                                                    <i class="fas fa-star"></i>
+                                                </span> 
+                            </div>
+                            
+
+                            &nbsp;&nbsp;
+                            <!-- <div class="px-3"><button type="button" class="btn btn-primary btn-block" routerLinkActive="active" routerLink="/surveypage">RE-SURVEY</button></div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="py-3">
+                            <div> <span class="d-block head">Gender</span> <span class="bottom">{{resultData.gender | uppercase}}</span> </div>
+                            <div class="mt-4"> <span class="d-block head">Mobile</span> <span class="bottom">(+91)&nbsp;{{resultData.phoneNumber}}</span> </div>
+                            <div class="mt-4"> <span class="d-block head">Department</span> <span class="bottom">{{resultData.department}}</span> </div>
+                            <div class="mt-4"> <span class="d-block head">HireDate</span> <span class="bottom">{{resultData.hireDate | date}}</span> </div>
+                            <div class="mt-4"> <span class="d-block head">Survey Status</span> <span class="bottom">{{resultData.surveyStatus | uppercase}}</span> </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

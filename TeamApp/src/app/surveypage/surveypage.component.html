@@ -1,0 +1,227 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Page</title>
+</head>
+<body>
+  
+<div class="main">
+
+  <h1 id="title"> Team Survey Form </h1>
+  
+   <div class="main-content">
+  <div class="form-content">
+    <a href="#" class="previous" routerLinkActive="active" routerLink="/employeelist"><h6 style="color:white;">&laquo; Back</h6></a>
+    <form id="survey-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <label for="employeeId" id="name-label">Employee Id</label>
+
+      <div>
+        <span
+        ngModel
+        style="color: red"
+        class="help-block"
+        *ngIf="!employeeId.valid && employeeId.touched">
+        <h6>*Please enter a valid Id</h6>
+        </span>
+      </div>
+
+      <input id="employeeId" type="text" name="employeeId"  [(ngModel)]="dataForSurvey.employeeId" required placeholder="Enter Employee Id" #employeeId="ngModel" required ngModel />
+
+      <label for="name" id="name-label">Name</label>
+
+      <div>
+        <span
+        ngModel
+        style="color: red"
+        class="help-block"
+        *ngIf="name.invalid && name.touched">
+       <h6>*Enter a valid Name</h6></span></div>
+
+      <input id="name" type="text" name="firstName"  [(ngModel)]="dataForSurvey.firstName" required placeholder="Enter name" #name="ngModel" required ngModel />
+
+      <label for="department" id="name-label">Department</label>
+
+      <div>
+        <span
+        ngModel
+        style="color: red"
+        class="help-block"
+        *ngIf="department.invalid && department.touched">
+       <h6>*Enter a valid Department</h6></span>
+                     
+      </div>        
+
+      <input id="department" type="department" name="department"  [(ngModel)]="dataForSurvey.department" required placeholder="Enter Department" name="department" #department="ngModel" required ngModel />
+      
+       <div>
+        <label for="surveydate">Survey Date : </label>
+
+        <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!surveydate.valid && surveydate.touched">
+          <h6>*Please Enter the Surveydate</h6>
+          </span>
+        </div>
+
+        <input type="date" id="Surveydate" name="surveyDate" [(ngModel)]="resultDetails.surveyDate" name="surveydate" #surveydate="ngModel" required ngModel>
+        <br>    
+       </div>
+       <br>
+       <hr/>
+
+      <p>Rate the Employee for the following constraints.</p>
+      <div class="question" >
+        <label for="number" id="number-label">This person have good work ethic.</label>
+
+        <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question1.valid && question1.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         <input id="number" type="number" #q1='ngModel' name="question1" [(ngModel)]="resultDetails.question1" min="1" max="10" required placeholder="Enter employee rating out of 10" #question1="ngModel" required ngModel />
+
+         <label for="number" id="number-label">This person shows an intrest in taking on more responsibilities at work.</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question2.valid && question2.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         
+         <input id="number" type="number"  #q2='ngModel' name="question2" [(ngModel)]="resultDetails.question2"min="1" max="10" required placeholder="Enter employee rating out of 10" #question2="ngModel" required ngModel />
+
+         
+        <label for="number" id="number-label">This person exhibits a positive attitude when working as part of team.</label>
+        
+        <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question3.valid && question3.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+
+        <input id="number" type="number"  #q3='ngModel' name="question3" [(ngModel)]="resultDetails.question3"min="1" max="10" required placeholder="Enter employee rating out of 10" #question3="ngModel" required ngModel />
+
+         <label for="number" id="number-label">Overall,this person's peers seems to be satisfied with him/her</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question4.valid && question4.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         
+         <input id="number" type="number"  #q4='ngModel' name="question4" [(ngModel)]="resultDetails.question4"min="1" max="10" required placeholder="Enter employee rating out of 10" #question4="ngModel" required ngModel />
+
+         <label for="number" id="number-label">This person takes his or her work seriously. </label>
+        
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question5.valid && question5.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+        
+         <input id="number" type="number"  #q5='ngModel' name="question5" [(ngModel)]="resultDetails.question5" min="1" max="10" required placeholder="Enter employee rating out of 10" #question5="ngModel" required ngModel  />
+
+         <label for="number" id="number-label">This person continously stands above the quality of work expected.</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question6.valid && question6.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         
+         <input id="number" type="number"  #q6='ngModel' name="question6" [(ngModel)]="resultDetails.question6" min="1" max="10" required placeholder="Enter employee rating out of 10" #question6="ngModel" required ngModel />
+         
+         <label for="number" id="number-label">This person continously shows willingness to adapt to change.</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question7.valid && question7.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         
+         <input id="number" type="number"  #q7='ngModel' name="question7" [(ngModel)]="resultDetails.question7"min="1" max="10" required placeholder="Enter employee rating out of 10" #question7="ngModel" required ngModel />
+         
+         <label for="number" id="number-label">This person exhibits a eagerness to self-improvement and enhance his/her knowledge. </label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question8.valid && question8.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+
+         <input id="number" type="number"  #q8='ngModel' name="question8" [(ngModel)]="resultDetails.question8"min="1" max="10" required placeholder="Enter employee rating out of 10" #question8="ngModel" required ngModel  />
+       
+         <label for="number" id="number-label">This person takes advantage of resources designed to help him or her at work.</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question9.valid && question9.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+         
+         <input id="number" type="number"  #q9='ngModel' name="question9" [(ngModel)]="resultDetails.question9"min="1" max="10" required placeholder="Enter employee rating out of 10" #question9="ngModel" required ngModel />
+       
+         <label for="number" id="number-label">his person attempts to slove problems himself/herself before escalating them to supervisors.</label>
+         
+         <div>
+          <span
+          ngModel
+          style="color: red"
+          class="help-block"
+          *ngIf="!question10.valid && question10.touched">
+          <small>*Please enter a valid score</small>
+          </span>
+          </div>
+
+         <input id="number" type="number"  #q10='ngModel' name="question10" [(ngModel)]="resultDetails.question10"min="1" max="10" required placeholder="Enter employee rating out of 10" #question10="ngModel" required ngModel  />
+       
+        </div>
+        <button type="submit" id="submit"    (click)="addResult()" >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+

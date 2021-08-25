@@ -1,0 +1,155 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Add employee</h2>
+                        <p>Add employees and manage their information to make sure their profiles are configured to fit your needs. In addition to their contact information, your employees’ profiles contains their assigned schedules, positions, and wage information.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4">Please fill with your details</h4>
+                <form>
+                    <!-- input row1 -->
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="basic-url"><small>First Name</small></label>
+                        <input type ="text" id="FirstName" name="firstName" [(ngModel)]="employeeDetails.firstName" placeholder="First Name" class="form-control" type="text" #firstname="ngModel" required ngModel>
+
+                        <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="firstname.invalid && firstname.touched">
+                       <small class="text-danger">*Enter a valid FirstName</small></span>
+
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="basic-url"><small>Last Name</small></label>
+                        <input type ="text" id="LastName" name="lastName" [(ngModel)]="employeeDetails.lastName" placeholder="Last Name" class="form-control" type="text" #lastname="ngModel" required ngModel>
+                      
+                        <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="lastname.invalid && lastname.touched">
+                       <small>*Enter a valid LastName</small></span>
+                      
+                      </div>
+                    </div>
+                    <!--input row2 -->
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="basic-url"><small>Department</small></label>
+                        <input type ="text" id="Department" name="department" [(ngModel)]="employeeDetails.department" placeholder="Department" class="form-control" type="text" #department="ngModel" required ngModel>
+                      
+                        <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="department.invalid && department.touched">
+                       <small>*Enter a valid Department</small></span>
+                      
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="basic-url"><small>Email</small></label>
+                        <input type="email" class="form-control" id="inputEmail4" name="email" [(ngModel)]="employeeDetails.email" placeholder="Email" #email="ngModel" required ngModel>
+                      
+                        <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="!email.valid && email.touched">
+                        <small>*Please enter a valid email</small>
+                        </span>
+                      
+                      </div>
+                    </div>
+                    <!--input row3 -->
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="basic-url"><small>Mobile No</small></label>
+                          <input id="Mobile No." name="phoneNumber" [(ngModel)]="employeeDetails.phoneNumber" placeholder="Mobile No." class="form-control" required="required" type="tel"required minlength="10" required maxlength="10" appForbiddenName="bob"
+                          #number="ngModel" required ngModel>
+
+                          <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="!number.valid && number.touched">
+                        <small>*Please enter a valid Mobile number</small>
+                        </span>
+
+                      </div>
+                      <!-- <div class="form-group col-md-6">
+                        <label for="basic-url"><small>Manager Id</small></label>
+                          <input id="Manager Id" name="managerId" [(ngModel)]="employeeDetails.managerId" placeholder="Manager Id" class="form-control" type="text">
+                        </div> -->
+                        <div  class="form-group col-md-6">
+                          <label for="basic-url"><small>Manager Id</small></label>
+                                  <select id="inputState" class="form-control">
+                                
+                                    <option selected  >Choose ...</option>
+                                    <option *ngFor="let manager of Managers" name="managerId" #managerId="ngModel" ngModel> {{manager.managerId}}</option>
+                                  
+                                    <!-- <option> {{manager.managerId}}</option>
+                                    <option> {{manager.managerId}}</option> -->
+                                    <!-- <option> Feedback</option> -->
+                                  </select>
+                        </div> 
+                    </div>
+                    <!-- input row4 -->
+                    <div class="form-row">
+                    <div class="col-md-6 mb-4">&nbsp;
+                        <input type="radio" name="gender" value="male" [(ngModel)]="employeeDetails.gender"> Male
+                        <input type="radio" name="gender" value="female" [(ngModel)]="employeeDetails.gender"> Female
+                      </div>
+                      &nbsp;&nbsp;
+                    <div>
+                      <label for="Hiredate">Hire Date : </label>&nbsp;
+                      <input type="date" id="Joiningdate" name="hireDate" [(ngModel)]="employeeDetails.hireDate" required #hiredate="ngModel" required ngModel>
+                        
+                      <div>
+                        <span
+                        ngModel
+                        style="color: red"
+                        class="help-block"
+                        *ngIf="!hiredate.valid && hiredate.touched">
+                        <small>*Please Enter the hiredate</small>
+                        </span>
+                      </div>
+                    
+                    </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2">
+                                  <label class="form-check-label" for="invalidCheck2">
+                                    <small>Confirm Details.</small>
+                                  </label>
+                                </div>
+                              </div>
+                    
+                          </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <button type="submit" (click)="addEmployee()" class="btn btn-danger" >Add Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
