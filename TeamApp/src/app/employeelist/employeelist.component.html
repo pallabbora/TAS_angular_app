@@ -20,13 +20,14 @@
                 <div class="col-sm-6">
                 <a class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span routerLinkActive="active" routerLink="/employeecreate">Add New Employee</span></a> 
                 </div>
-                <form #f="ngForm" class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                <!-- <form #f="ngForm" class="example" action="/action_page.php" style="margin:auto;max-width:300px">
                     <div  class="search">
-                    <input  type="text" style="color:black" placeholder="Search.." #num="ngModel"  name="searchById" [(ngModel)]="searchById" >
-                    <button type="submit" (click)="getEmployeeById(num.value)"><i class="fa fa-search" ></i></button>
+                    <input  type="number" style="color:black" placeholder="Search.." #num="ngModel" ngModel name="searchById" [(ngModel)]="searchById">
+                    <button type="submit" routerLinkActive="active" routerLink="/searchpage/{{num.value }}"><i class="fa fa-search" ></i></button>
+                     <button type="submit" (click)="getEmployeeById(num.value)"><i class="fa fa-search" ></i></button>
                     </div>
                 </form>
-                 
+                  -->
                 </div>
                 
             </div>
@@ -35,29 +36,29 @@
                     <tr>
                     <th>
                     </th>
-                        <th>EmployeeId</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Department</th>
-                        <th>Survey Status</th>
+                        <th><h4><b>EmployeeId</b></h4></th>
+                        <th><h4><b>First Name</b></h4></th>
+                        <th><h4><b>Last Name</b></h4></th>
+                        <th><h4><b>Department</b></h4></th>
+                        <th><h4><b>Survey Status</b></h4></th>
                         <th></th>
                         <th></th>
-                        <th>Actions</th>
+                        <th><h4><b>Action</b></h4></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let emp of Employees">
-                    <td>
-                    </td>
-                        <td>{{emp.employeeId}}</td>
-                        <td>{{emp.firstName}}</td>
-                        <td>{{emp.lastName}}</td>
-                        <td>{{emp.department}}</td>
-                        <td>{{emp.surveyStatus}}</td>
-                        <td><button type="button" class="btn btn-outline-info" routerLinkActive="active" routerLink="/surveypage/{{ emp.employeeId }}">Take Survey</button></td>
-                        <td><button type="button" class="btn btn-outline-success" routerLinkActive="active" routerLink="/surveydisplay/{{ emp.employeeId }}">View Results</button></td>
+                    <td class="data">
+              
+                        <td><h4>{{emp.employeeId}}</h4></td>
+                        <td><h4>{{emp.firstName}}</h4></td>
+                        <td><h4>{{emp.lastName}}</h4></td>
+                        <td><h4>{{emp.department}}</h4></td>
+                        <td><h4>{{emp.surveyStatus}}</h4></td>
+                        <td><button type="button" class="btn btn-outline-info" routerLinkActive="active" routerLink="/surveypage/{{ emp.employeeId }}"><h5>Take Survey</h5></button></td>
+                        <td><button type="button" class="btn btn-outline-success" routerLinkActive="active" routerLink="/surveydisplay/{{ emp.employeeId }}"><h5>View Results</h5></button></td>
                         <td>
-                            <a button type="button" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit"routerLinkActive="active" routerLink="/employeeedit/{{ emp.employeeId }}">&#xE254;</i></a>
+                            <a button type="button" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" routerLinkActive="active" routerLink="/employeeedit/{{ emp.employeeId }}">&#xE254;</i></a>
                             <a button type="button" class="delete" data-toggle="modal"><i class="material-icons" (click)="deleteEmployee(emp.employeeId)" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>

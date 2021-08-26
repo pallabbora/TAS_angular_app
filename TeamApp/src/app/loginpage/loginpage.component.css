@@ -51,4 +51,8 @@ nav{
   width:100%;
 }
 
-
+body{
+  background-color: #c8e8e9;
+  min-height: 85vh;
+  width: 100%;
+}

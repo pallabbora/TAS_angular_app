@@ -1,8 +1,12 @@
 body {
+    padding-top:50px;
     background-color: #9accf3
 }
-
+.box{
+    padding-top:50px;
+}
 .card {
+    padding-top:50px;
     background-color:white;
     border: none;
     border-radius: 5px;
@@ -16,13 +20,16 @@ body {
 }
 
 .head {
+   
     color: #97989a;
     font-size: 12px
 }
 
 .bottom {
-    color: grey;
-    font-size: 14px
+    
+    color:grey;
+    font-size: 18px;
+  
 }
 
 /* GReen result */
@@ -57,3 +64,7 @@ body {
 .progress {
     margin-top: 10px
 }
+/* .mt-4{
+    font-weight: bold;
+      color: rgb(8, 7, 7);
+} */

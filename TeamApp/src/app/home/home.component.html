@@ -1,13 +1,24 @@
 <head>
-    <title> HOME </title>   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>My Website</title>
 </head>
+
 <body>
-
-<div class="text-box">
-<h2><b>WELCOME TO TEAM SURVEY SYSTEM</b></h2><br/>
-<h5><b>We offer the best survey experience</b></h5><br/>
-<a routerLinkActive="active" routerLink="/loginpage"class="hero-btn"> Take Survey </a>
-
-</div>
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Hello, <span></span></h1>
+        <h1>Welcome to  <span></span></h1>
+        <h1>Team Survey App <span></span></h1>
+        <a routerLinkActive="active" routerLink="/loginpage" type="button" class="cta">Take Survey</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
 </body>
+
+<router-outlet></router-outlet>
 

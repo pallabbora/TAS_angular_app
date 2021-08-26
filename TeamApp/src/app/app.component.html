@@ -1,21 +1,41 @@
-
-    <section class = "header">
-        <nav>
-            <a href = "index.html"></a>
-            <div class="nav-links">
-              <Ul>
-                    <li> <a routerLinkActive="active" routerLink="/home"> HOME</a></li>
-                    <li> <a routerLinkActive="active" routerLink="/aboutus"> ABOUT US </a></li>
-                    <li> <a routerLinkActive="active" routerLink="/contactus"> CONTACT US</a></li>
-                    <li> <a routerLinkActive="active" routerLink="/loginpage"> LOGIN</a></li>
-                    <!-- <li> <a routerLinkActive="active" routerLink="/registerpage">REGISTER</a></li>  -->
-                    <li> <a routerLinkActive="active" routerLink="/employeelist">ALL EMPLOYEES</a></li> 
-                    <li> <a routerLinkActive="active" routerLink="/employeeprofile">EMPLOYEE PROFILE</a></li> 
-                </Ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Website</title>
+  </head>
+  
+  <body>
+    <!-- Header -->
+    <section id="header">
+      <div class="header container">
+        <div class="nav-bar">
+          <div class="brand">
+            <a routerLinkActive="active" routerLink="/home"  data-after="Home">
+              <h1><span>TEAM</span>SURVEY <span>A</span>PP</h1>
+            </a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger">
+              <div class="bar"></div>
             </div>
-        </nav>
-        </section>
-        <!-- <mainpage></mainpage> -->
+            <ul>
+              <li><a routerLinkActive="active" routerLink="/home"  data-after="Home"><h6><b>Home</b></h6></a></li>
+              <li><a routerLinkActive="active" routerLink="/loginpage" data-after="About"><h6><b>Login page</b></h6></a></li>
+                  <li><a routerLinkActive="active" routerLink="/contactus" data-after="Projects"><h6><b>Contact us</b></h6></a></li>
+                  <li><a routerLinkActive="active" routerLink="/aboutus" data-after="Service"><h6><b>About us</b></h6></a></li>
+                  <!-- <li> <a routerLinkActive="active" routerLink="/employeelist">ALL EMPLOYEES</a></li> -->
+              <!-- <li> <a routerLinkActive="active" routerLink="/employeelist">ALL EMPLOYEES</a></li>  -->
+              <!-- <li> <a routerLinkActive="active" routerLink="/employeeprofile">EMPLOYEE PROFILE</a></li>  -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Header -->
+  
+  
+    
 
-   
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+
